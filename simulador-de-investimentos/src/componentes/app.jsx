@@ -1,6 +1,22 @@
 import { Component } from "react";
+import axios from "axios"
 
 export default class Simulador extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            response: []
+        }
+    }
+    componentDidMount() {
+        axios.get("http://localhost:3000/simulacoes").then(resposta => {
+            const info = resposta.data
+            this.setState({ response: info })
+        })
+        setTimeout(() => {
+            console.log(this.state.response)
+        }, 1000)
+    }
     render() {
         return(
             <section>
