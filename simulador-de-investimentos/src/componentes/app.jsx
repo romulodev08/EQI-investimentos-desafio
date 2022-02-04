@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "axios"
+import "../estilos/app.css"
 
 export default class Simulador extends Component {
     constructor(props) {
@@ -19,17 +20,17 @@ export default class Simulador extends Component {
     }
     render() {
         return(
-            <section>
+            <section id="conteúdo">
                 <h1>Simulador de Investimentos</h1>
                 <form className="containerSimulador" id="containerDePreenchimento">
                     <h2>Simulador</h2>
-                    <div>
+                    <div className="areasDePreenchimento areasDePreenchimento1">
                         <div>
-                            <label>Rendimento</label>
+                            <label>Rendimento</label><br />
                             <input type="radio" name="rendimento" id="r1rendimento" defaultChecked />
                             <input type="radio" name="rendimento" id="r2rendimento" />
-                            <label htmlFor="r1rendimento">Bruto</label>
-                            <label htmlFor="r2rendimento">Líquido</label>
+                            <label className="rendimentoLabel" id="rendimentoLabel1" htmlFor="r1rendimento">Bruto</label>
+                            <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento">Líquido</label>
                         </div>
                         <div>
                             <label>Aporte inicial</label>
@@ -45,7 +46,7 @@ export default class Simulador extends Component {
                             <input type="number" name="IPCA" id="IPCA" />
                         </div>
                     </div>
-                    <div>
+                    <div className="areasDePreenchimento areasDePreenchimento2">
                         <div>
                             <label>Tipos de indexação</label>
                             <input type="radio" name="indexação" id="r1indexação" />
@@ -69,7 +70,7 @@ export default class Simulador extends Component {
                             <input type="number" name="CDI" id="CDI" />
                         </div>
                     </div>
-                    <div className="botõesContainer">
+                    <div className="botõesContainer ">
                         <input type="reset" value="Limpar campos" />
                         <button className="botão">Simular</button>
                     </div>
