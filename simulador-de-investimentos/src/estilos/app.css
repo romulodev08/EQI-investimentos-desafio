@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font: normal 20px sans-serif;
+    font: bold 20px sans-serif;
+}
+.oculto {
+    position: absolute;
+    display: none;
 }
 #conteúdo {
     position: absolute;
@@ -24,6 +28,19 @@
     text-align: center;
 }
 
+.areasDePreenchimento > div{
+    margin: auto;
+}
+.areasDePreenchimento > div:first-child{
+    font: normal 10px sans-serif;
+}
+.areasDePreenchimento > div input{
+    font: normal 20px sans-serif;
+}
+.areasDePreenchimento > div > :last-child{
+    width: 100%;
+}
+
 .rendimentoLabel {
     display: inline-table;
     padding: 18px;
@@ -32,15 +49,50 @@
     font-size: 12px;
     color: black;
     border: solid 1px black;
+    width: 50%;
 }
 #rendimentoLabel1 {
     border-radius: 10px 0px 0px 10px;
 }
+#rendimentoLabel2 {
+    border-radius: 0px 10px 10px 0px;
+}
+
 input[id="r1rendimento"]:checked ~ #rendimentoLabel1 {
     background-color: #ed8e53;
     color: white;
 }
 input[id="r2rendimento"]:checked ~ #rendimentoLabel2 {
+    background-color: #ed8e53;
+    color: white;
+}
+
+.indexaçãoLabel {
+    display: inline-table;
+    padding: 18px;
+    width: 98px;
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    border: solid 1px black;
+    width: 33.3%;
+}
+#indexação1 {
+    border-radius: 10px 0px 0px 10px;
+}
+#indexação3 {
+    border-radius: 0px 10px 10px 0px;
+}
+
+input[id="r1indexação"]:checked ~ #indexação1 {
+    background-color: #ed8e53;
+    color: white;
+}
+input[id="r2indexação"]:checked ~ #indexação2 {
+    background-color: #ed8e53;
+    color: white;
+}
+input[id="r3indexação"]:checked ~ #indexação3 {
     background-color: #ed8e53;
     color: white;
 }

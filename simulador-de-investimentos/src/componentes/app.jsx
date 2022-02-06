@@ -27,10 +27,11 @@ export default class Simulador extends Component {
                     <div className="areasDePreenchimento areasDePreenchimento1">
                         <div>
                             <label>Rendimento</label><br />
-                            <input type="radio" name="rendimento" id="r1rendimento" defaultChecked />
-                            <input type="radio" name="rendimento" id="r2rendimento" />
+                            <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked />
+                            <input type="radio" name="rendimento" id="r2rendimento" className="oculto" />
                             <label className="rendimentoLabel" id="rendimentoLabel1" htmlFor="r1rendimento">Bruto</label>
                             <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento">Líquido</label>
+                            <span></span>
                         </div>
                         <div>
                             <label>Aporte inicial</label>
@@ -48,13 +49,14 @@ export default class Simulador extends Component {
                     </div>
                     <div className="areasDePreenchimento areasDePreenchimento2">
                         <div>
-                            <label>Tipos de indexação</label>
-                            <input type="radio" name="indexação" id="r1indexação" />
-                            <input type="radio" name="indexação" id="r2indexação" defaultChecked />
-                            <input type="radio" name="indexação" id="r3indexação" />
-                            <label htmlFor="r1indexação">PRÉ</label>
-                            <label htmlFor="r2indexação">POS</label>
-                            <label htmlFor="r3indexação">FIXADO</label>
+                            <label>Tipos de indexação</label><br />
+                            <input type="radio" name="indexação" id="r1indexação" className="oculto" />
+                            <input type="radio" name="indexação" id="r2indexação" className="oculto" defaultChecked />
+                            <input type="radio" name="indexação" id="r3indexação" className="oculto" />
+                            <label htmlFor="r1indexação" id="indexação1" className="indexaçãoLabel">PRÉ</label>
+                            <label htmlFor="r2indexação" id="indexação2" className="indexaçãoLabel">POS</label>
+                            <label htmlFor="r3indexação" id="indexação3" className="indexaçãoLabel">FIXADO</label>
+                            <span></span>
                         </div>
                         <div>
                             <label>Aporte mensal</label>
