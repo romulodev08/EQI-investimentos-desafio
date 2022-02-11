@@ -27,8 +27,8 @@ export default class Simulador extends Component {
                     <div className="areasDePreenchimento areasDePreenchimento1">
                         <div>
                             <label>Rendimento</label><br />
-                            <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked />
-                            <input type="radio" name="rendimento" id="r2rendimento" className="oculto" />
+                            <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked  />
+                            <input type="radio" name="rendimento" id="r2rendimento" className="oculto"  />
                             <label className="rendimentoLabel" id="rendimentoLabel1" htmlFor="r1rendimento">Bruto</label>
                             <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento">Líquido</label>
                             <span></span>
@@ -36,15 +36,15 @@ export default class Simulador extends Component {
                         <div>
                             <label>Aporte inicial</label>
                             <span>R$</span>
-                            <input type="number" name="aporteinicial" id="aporteinicial" />
+                            <input type="number" name="aporteinicial" id="aporteinicial" required />
                         </div>
                         <div>
                             <label>Prazo (em meses)</label>
-                            <input type="number" name="prazo" id="prazo" />
+                            <input type="number" name="prazo" id="prazo" required />
                         </div>
                         <div>
                             <label>IPCA (ao ano)</label>
-                            <input type="number" name="IPCA" id="IPCA" />
+                            <input type="number" name="IPCA" id="IPCA" required />
                         </div>
                     </div>
                     <div className="areasDePreenchimento areasDePreenchimento2">
@@ -61,15 +61,15 @@ export default class Simulador extends Component {
                         <div>
                             <label>Aporte mensal</label>
                             <span>R$</span>
-                            <input type="number" name="aportemensal" id="aportemensal" />
+                            <input type="number" name="aportemensal" id="aportemensal" required />
                         </div>
                         <div>
                             <label>Rentabilidade</label>
-                            <input type="number" name="rentabilidade" id="rentabilidade" />
+                            <input type="number" name="rentabilidade" id="rentabilidade" required />
                         </div>
                         <div>
                             <label>CDI (ao ano)</label>
-                            <input type="number" name="CDI" id="CDI" />
+                            <input type="number" name="CDI" id="CDI" required />
                         </div>
                     </div>
                     <div className="botõesContainer ">
@@ -77,7 +77,7 @@ export default class Simulador extends Component {
                         <button className="botão">Simular</button>
                     </div>
                 </form>
-                <div className="containerSimulador"></div>
+                <div className="containerSimulador">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit ipsa quod vel, eligendi reiciendis minus harum odio quia iste? Ab, quisquam officia iste culpa fuga earum. Nemo dicta quas consequatur.</div>
             </section>
         )
     }
