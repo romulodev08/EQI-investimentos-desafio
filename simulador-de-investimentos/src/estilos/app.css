@@ -26,6 +26,9 @@ input[type = "number"] {
     margin: auto;
     text-align: center;
 }
+.containerSimulador {
+    margin: auto;
+}
 #containerDePreenchimento {
     display: grid;
     gap: 10px;
