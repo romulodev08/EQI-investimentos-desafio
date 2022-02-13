@@ -22,10 +22,10 @@ export default class Simulador extends Component {
         return(
             <section id="conteúdo">
                 <h1>Simulador de Investimentos</h1>
-                <form className="containerSimulador" id="containerDePreenchimento">
+                <form className="containerSimulador" id="formulário">
                     <h2>Simulador</h2>
-                    <div className="areasDePreenchimento areasDePreenchimento1">
-                        <div>
+                    <div className="containersDePreenchimento containersDePreenchimento1">
+                        <div className="containerDePreenchimento" id="rendimentoContainer">
                             <label>Rendimento</label><br />
                             <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked  />
                             <input type="radio" name="rendimento" id="r2rendimento" className="oculto"  />
@@ -33,22 +33,21 @@ export default class Simulador extends Component {
                             <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento">Líquido</label>
                             <span></span>
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>Aporte inicial</label>
-                            <span>R$</span>
                             <input type="number" name="aporteinicial" id="aporteinicial" required />
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>Prazo (em meses)</label>
                             <input type="number" name="prazo" id="prazo" required />
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>IPCA (ao ano)</label>
                             <input type="number" name="IPCA" id="IPCA" required />
                         </div>
                     </div>
-                    <div className="areasDePreenchimento areasDePreenchimento2">
-                        <div>
+                    <div className="containersDePreenchimento containersDePreenchimento2">
+                        <div className="containerDePreenchimento" id="containerIndexação">
                             <label>Tipos de indexação</label><br />
                             <input type="radio" name="indexação" id="r1indexação" className="oculto" />
                             <input type="radio" name="indexação" id="r2indexação" className="oculto" defaultChecked />
@@ -58,23 +57,22 @@ export default class Simulador extends Component {
                             <label htmlFor="r3indexação" id="indexação3" className="indexaçãoLabel">FIXADO</label>
                             <span></span>
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>Aporte mensal</label>
-                            <span>R$</span>
                             <input type="number" name="aportemensal" id="aportemensal" required />
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>Rentabilidade</label>
                             <input type="number" name="rentabilidade" id="rentabilidade" required />
                         </div>
-                        <div>
+                        <div className="containerDePreenchimento">
                             <label>CDI (ao ano)</label>
                             <input type="number" name="CDI" id="CDI" required />
                         </div>
                     </div>
-                    <div className="botõesContainer ">
-                        <input type="reset" value="Limpar campos" />
-                        <button className="botão">Simular</button>
+                    <div id="botoesContainer">
+                        <input className="botoes" type="reset" value="Limpar campos" />
+                        <button className="botoes" type="submit">Simular</button>
                     </div>
                 </form>
                 <div className="containerSimulador">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit ipsa quod vel, eligendi reiciendis minus harum odio quia iste? Ab, quisquam officia iste culpa fuga earum. Nemo dicta quas consequatur.</div>
