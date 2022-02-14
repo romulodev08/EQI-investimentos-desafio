@@ -10,7 +10,8 @@ export default class Simulador extends Component {
             rendimento: "bruto",
             tipoDeIndexação: "pos",
             resultadoDaSimulação: [],
-            dadosDoFormulario: []
+            dadosDoFormulario: [],
+            mostrarSimulação: false,
         }
     }
     componentDidMount() {
@@ -25,7 +26,7 @@ export default class Simulador extends Component {
     simular(props) {
         this.state.response.map((item, index) => {
             if(item.tipoIndexacao == this.state.tipoDeIndexação && item.tipoRendimento == this.state.rendimento) {
-                this.setState({ resultadoDaSimulação: item })
+                this.setState({ resultadoDaSimulação: item, mostrarSimulação: true })
             }
         })
     }
@@ -104,7 +105,7 @@ export default class Simulador extends Component {
                         <button className="botoes" type="button" onClick={() => this.validarCampos()}>Simular</button>
                     </div>
                 </form>
-                <div className="containerSimulador resultado">
+                <div className="containerSimulador resultado" style={{visibility: this.state.mostrarSimulação?"visible": "hidden"}}>
                     <h2>Resultado da Simulação</h2>
                     <div id="valores">
                         <div className="card">
