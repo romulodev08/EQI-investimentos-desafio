@@ -6,7 +6,9 @@ export default class Simulador extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            response: []
+            response: [],
+            rendimento: "bruto",
+            tipoDeIndexação: "pos"
         }
     }
     componentDidMount() {
@@ -18,6 +20,11 @@ export default class Simulador extends Component {
             console.log(this.state.response)
         }, 1000)
     }
+    simular(props) {
+        this.state.response.map((item, index) => {
+            
+        })
+    }
     render() {
         return(
             <section id="conteúdo">
@@ -27,10 +34,10 @@ export default class Simulador extends Component {
                     <div className="containersDePreenchimento containersDePreenchimento1">
                         <div className="containerDePreenchimento" id="rendimentoContainer">
                             <label>Rendimento</label><br />
-                            <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked  />
+                            <input type="radio" name="rendimento" id="r1rendimento" className="oculto" defaultChecked />
                             <input type="radio" name="rendimento" id="r2rendimento" className="oculto"  />
-                            <label className="rendimentoLabel" id="rendimentoLabel1" htmlFor="r1rendimento">Bruto</label>
-                            <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento">Líquido</label>
+                            <label className="rendimentoLabel" id="rendimentoLabel1" htmlFor="r1rendimento" onClick={() => this.setState({ rendimento: "bruto" })}>Bruto</label>
+                            <label className="rendimentoLabel" id="rendimentoLabel2" htmlFor="r2rendimento" onClick={() => this.setState({ rendimento: "liquido" })} >Líquido</label>
                             <span></span>
                         </div>
                         <div className="containerDePreenchimento">
@@ -52,9 +59,9 @@ export default class Simulador extends Component {
                             <input type="radio" name="indexação" id="r1indexação" className="oculto" />
                             <input type="radio" name="indexação" id="r2indexação" className="oculto" defaultChecked />
                             <input type="radio" name="indexação" id="r3indexação" className="oculto" />
-                            <label htmlFor="r1indexação" id="indexação1" className="indexaçãoLabel">PRÉ</label>
-                            <label htmlFor="r2indexação" id="indexação2" className="indexaçãoLabel">POS</label>
-                            <label htmlFor="r3indexação" id="indexação3" className="indexaçãoLabel">FIXADO</label>
+                            <label htmlFor="r1indexação" id="indexação1" className="indexaçãoLabel" onClick={() => this.setState({ tipoDeIndexação: "pre" })} >PRÉ</label>
+                            <label htmlFor="r2indexação" id="indexação2" className="indexaçãoLabel" onClick={() => this.setState({ tipoDeIndexação: "pos" })} >POS</label>
+                            <label htmlFor="r3indexação" id="indexação3" className="indexaçãoLabel" onClick={() => this.setState({ tipoDeIndexação: "ipca" })} >FIXADO</label>
                             <span></span>
                         </div>
                         <div className="containerDePreenchimento">
@@ -75,7 +82,39 @@ export default class Simulador extends Component {
                         <button className="botoes" type="submit">Simular</button>
                     </div>
                 </form>
-                <div className="containerSimulador">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit ipsa quod vel, eligendi reiciendis minus harum odio quia iste? Ab, quisquam officia iste culpa fuga earum. Nemo dicta quas consequatur.</div>
+                <div className="containerSimulador resultado">
+                    <h2>Resultado da Simulação</h2>
+                    <div id="valores">
+                        <div className="card">
+                            <h3>Valor final Bruto</h3>
+                            <p></p>
+                        </div>
+                        <div className="card">
+                            <h3>Alíquota do IR</h3>
+                            <p></p>
+                        </div>
+                        <div className="card">
+                            <h3>Valor pago em IR</h3>
+                            <p></p>
+                        </div>
+                        <div className="card">
+                            <h3>Valor final Líquido</h3>
+                            <p></p>
+                        </div>
+                        <div className="card">
+                            <h3>Valor total Investido</h3>
+                            <p></p>
+                        </div>
+                        <div className="card">
+                            <h3>Ganho Líquido</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div id="grafico">
+
+                    </div>
+                </div>
+
             </section>
         )
     }
