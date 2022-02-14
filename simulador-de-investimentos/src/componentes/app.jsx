@@ -8,7 +8,9 @@ export default class Simulador extends Component {
         this.state = {
             response: [],
             rendimento: "bruto",
-            tipoDeIndexação: "pos"
+            tipoDeIndexação: "pos",
+            resultadoDaSimulação: [],
+            dadosDoFormulario: []
         }
     }
     componentDidMount() {
@@ -22,14 +24,34 @@ export default class Simulador extends Component {
     }
     simular(props) {
         this.state.response.map((item, index) => {
-            
+            if(item.tipoIndexacao == this.state.tipoDeIndexação && item.tipoRendimento == this.state.rendimento) {
+                this.setState({ resultadoDaSimulação: item })
+            }
         })
     }
+    validarCampos(){
+		const campos = document.querySelectorAll("[required]")
+        let preenchidos = false
+        for(let i = 0; i < campos.length; i++) {
+            if(campos[i].value == "") {
+                campos[i].style.borderBottomColor = "red"
+                preenchidos = false
+            } else {
+                campos[i].style.borderBottomColor = "black"
+                preenchidos = true
+            }
+        }
+        setInterval(() => {
+            if(preenchidos) {
+                this.simular()
+            }
+        });
+	}
     render() {
         return(
             <section id="conteúdo">
                 <h1>Simulador de Investimentos</h1>
-                <form className="containerSimulador" id="formulário">
+                <form className="containerSimulador" id="formulário" >
                     <h2>Simulador</h2>
                     <div className="containersDePreenchimento containersDePreenchimento1">
                         <div className="containerDePreenchimento" id="rendimentoContainer">
@@ -79,7 +101,7 @@ export default class Simulador extends Component {
                     </div>
                     <div id="botoesContainer">
                         <input className="botoes" type="reset" value="Limpar campos" />
-                        <button className="botoes" type="submit">Simular</button>
+                        <button className="botoes" type="button" onClick={() => this.validarCampos()}>Simular</button>
                     </div>
                 </form>
                 <div className="containerSimulador resultado">
@@ -87,27 +109,27 @@ export default class Simulador extends Component {
                     <div id="valores">
                         <div className="card">
                             <h3>Valor final Bruto</h3>
-                            <p></p>
+                            <p>R${ this.state.resultadoDaSimulação.valorFinalBruto }</p>
                         </div>
                         <div className="card">
                             <h3>Alíquota do IR</h3>
-                            <p></p>
+                            <p>{this.state.resultadoDaSimulação.aliquotaIR}%</p>
                         </div>
                         <div className="card">
                             <h3>Valor pago em IR</h3>
-                            <p></p>
+                            <p>{this.state.resultadoDaSimulação.valorPagoIR}</p>
                         </div>
                         <div className="card">
                             <h3>Valor final Líquido</h3>
-                            <p></p>
+                            <p>{this.state.resultadoDaSimulação.valorFinalLiquido}</p>
                         </div>
                         <div className="card">
                             <h3>Valor total Investido</h3>
-                            <p></p>
+                            <p>{this.state.resultadoDaSimulação.valorTotalInvestido}</p>
                         </div>
                         <div className="card">
                             <h3>Ganho Líquido</h3>
-                            <p></p>
+                            <p>{this.state.resultadoDaSimulação.valorFinalLiquido}</p>
                         </div>
                     </div>
                     <div id="grafico">
