@@ -31,6 +31,7 @@ export default class Simulador extends Component {
         })
     }
     validarCampos(){
+        /*
 		const campos = document.querySelectorAll("[required]")
         let preenchidos = false
         for(let i = 0; i < campos.length; i++) {
@@ -41,8 +42,9 @@ export default class Simulador extends Component {
                 campos[i].style.borderBottomColor = "black"
                 preenchidos = true
             }
-        }
+        }*/
         setInterval(() => {
+            let preenchidos = true
             if(preenchidos) {
                 this.simular()
             }
@@ -109,32 +111,32 @@ export default class Simulador extends Component {
                     <h2>Resultado da Simulação</h2>
                     <div id="valores">
                         <div className="card">
-                            <h3>Valor final Bruto</h3>
-                            <p>R${ this.state.resultadoDaSimulação.valorFinalBruto }</p>
+                            <h3 className="cardChild">Valor final Bruto</h3>
+                            <p className="cardChild">R${ this.state.resultadoDaSimulação.valorFinalBruto }</p>
                         </div>
                         <div className="card">
-                            <h3>Alíquota do IR</h3>
-                            <p>{this.state.resultadoDaSimulação.aliquotaIR}%</p>
+                            <h3 className="cardChild">Alíquota do IR</h3>
+                            <p className="cardChild">{this.state.resultadoDaSimulação.aliquotaIR}%</p>
                         </div>
                         <div className="card">
-                            <h3>Valor pago em IR</h3>
-                            <p>{this.state.resultadoDaSimulação.valorPagoIR}</p>
+                            <h3 className="cardChild">Valor pago em IR</h3>
+                            <p className="cardChild">R${this.state.resultadoDaSimulação.valorPagoIR}</p>
                         </div>
                         <div className="card">
-                            <h3>Valor final Líquido</h3>
-                            <p>{this.state.resultadoDaSimulação.valorFinalLiquido}</p>
+                            <h3 className="cardChild">Valor final Líquido</h3>
+                            <p className="cardChild"><mark>R${this.state.resultadoDaSimulação.valorFinalLiquido}</mark></p>
                         </div>
                         <div className="card">
-                            <h3>Valor total Investido</h3>
-                            <p>{this.state.resultadoDaSimulação.valorTotalInvestido}</p>
+                            <h3 className="cardChild">Valor total Investido</h3>
+                            <p className="cardChild">R${this.state.resultadoDaSimulação.valorTotalInvestido}</p>
                         </div>
                         <div className="card">
-                            <h3>Ganho Líquido</h3>
-                            <p>{this.state.resultadoDaSimulação.valorFinalLiquido}</p>
+                            <h3 className="cardChild">Ganho Líquido</h3>
+                            <p className="cardChild"><mark>R${this.state.resultadoDaSimulação.valorFinalLiquido}</mark></p>
                         </div>
                     </div>
                     <div id="grafico">
-
+                        gráfico
                     </div>
                 </div>
 
