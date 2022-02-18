@@ -6,4 +6,4 @@
 ## como acessar/visualizar a interface
 -Faça o download do repositório, execute a pasta "api" com "npx json-server db.json".
 -Em seguida execute a pasta "simulador-de-investimentos" com "npm start" na porta 3001
- o desafio foi publicado pela plataforma Vercel permitindo sua visualização, mas a API será acessada por um servidor local.
+ o desafio será executado localmente, assim como a API permitindo a visualização do projeto.
