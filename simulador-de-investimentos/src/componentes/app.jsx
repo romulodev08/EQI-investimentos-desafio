@@ -31,7 +31,6 @@ export default class Simulador extends Component {
         })
     }
     validarCampos(){
-        /*
 		const campos = document.querySelectorAll("[required]")
         let preenchidos = false
         for(let i = 0; i < campos.length; i++) {
@@ -42,7 +41,7 @@ export default class Simulador extends Component {
                 campos[i].style.borderBottomColor = "black"
                 preenchidos = true
             }
-        }*/
+        }
         setInterval(() => {
             let preenchidos = true
             if(preenchidos) {
