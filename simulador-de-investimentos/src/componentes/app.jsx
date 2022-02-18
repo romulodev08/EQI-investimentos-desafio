@@ -19,9 +19,6 @@ export default class Simulador extends Component {
             const info = resposta.data
             this.setState({ response: info })
         })
-        setTimeout(() => {
-            console.log(this.state.response)
-        }, 1000)
     }
     simular(props) {
         this.state.response.map((item, index) => {
@@ -43,7 +40,6 @@ export default class Simulador extends Component {
             }
         }
         setInterval(() => {
-            let preenchidos = true
             if(preenchidos) {
                 this.simular()
             }
